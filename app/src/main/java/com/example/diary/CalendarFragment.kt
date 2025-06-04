@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import com.example.diary.databinding.FragmentCalendarBinding
 import com.prolificinteractive.materialcalendarview.format.ArrayWeekDayFormatter
 import com.prolificinteractive.materialcalendarview.format.MonthArrayTitleFormatter
+import java.time.DayOfWeek
+import java.time.LocalDate
 
 class CalendarFragment : Fragment() {
 
@@ -32,6 +34,8 @@ class CalendarFragment : Fragment() {
         binding.calendarCalendar.setOnDateChangedListener{ widget, date, selected ->
             Log.d("FLOW:CalendarFrag", "setOnDateChangedListener")
             selectedDay = date.toString()
+
+            Log.d("Calendar:CalendarDay", "Year:${date.year} / Month:${date.month} / Day:${date.day}")
 
             calendarToWritingActivity(selectedDay)
         }
