@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/dialog_back_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/btn_back_arrow"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- 이미지 삽입란 -->
+    <ImageView
+        android:id="@+id/dialog_image_input_iv"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_clothes"
+        android:background="@drawable/bordered_square"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_back_button"
+        app:layout_constraintBottom_toTopOf="@id/dialog_input_et"/>
+    <TextView
+        android:id="@+id/dialog_guide_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="넣을 이미지가 있다면 넣어주세요"
+        android:textColor="#828282"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/dialog_image_input_iv"
+        app:layout_constraintStart_toStartOf="@id/dialog_image_input_iv"
+        app:layout_constraintEnd_toEndOf="@id/dialog_image_input_iv"/>
+
+    <!-- 옷 이름 입력란 -->
+    <EditText
+        android:id="@+id/dialog_input_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_guide_tv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="옷 이름을 입력하세요"/>
+
+    <!-- 입력 버튼 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dialog_input_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FEE57B"
+        app:cardCornerRadius="27dp"
+        app:layout_constraintTop_toTopOf="@id/dialog_input_et"
+        app:layout_constraintStart_toEndOf="@id/dialog_input_et"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/btn_write"
+            android:layout_margin="5dp"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
