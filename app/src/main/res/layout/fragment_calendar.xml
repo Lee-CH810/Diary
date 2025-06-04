@@ -6,12 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".CalendarFragment">
 
-    <!--캘린더 뷰-->
-    <!--mcv_selectionMode="single" 로 설정. 날짜 단일 선택만 가능. 범위 설정 가능하게 하고 싶으면, range로 설정-->
+    <!-- 캘린더 뷰 -->
+    <!-- mcv_selectionMode="single" 로 설정. 날짜 단일 선택만 가능. 범위 설정 가능하게 하고 싶으면, range로 설정
+         mcv_titleAnimationOrientation: 월별 달력 슬라이드 효과 -->
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calendar_calendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:mcv_titleAnimationOrientation="horizontal"
+        app:mcv_tileHeight="0dp"
         app:mcv_selectionMode="single"
         app:mcv_showOtherDates="all"
         app:mcv_firstDayOfWeek="sunday"
@@ -27,7 +31,7 @@
         android:layout_height="40dp"
         android:layout_marginBottom="10dp"
         app:cardCornerRadius="20dp"
-        app:layout_constraintTop_toBottomOf="@id/calendar_calendar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/main_writing_iv">
         <EditText
@@ -47,9 +51,9 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:src="@drawable/btn_writing"
-        android:layout_marginTop="-15dp"
         app:layout_constraintStart_toEndOf="@id/calendar_edit_text_cv"
         app:layout_constraintTop_toTopOf="@id/calendar_edit_text_cv"
+        app:layout_constraintBottom_toBottomOf="@id/calendar_edit_text_cv"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

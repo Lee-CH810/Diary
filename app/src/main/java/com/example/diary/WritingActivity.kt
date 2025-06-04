@@ -17,7 +17,10 @@ class WritingActivity : AppCompatActivity() {
 
         binding = ActivityWritingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         Log.d("FLOW:WritingAct", "setContentView")
+
+        binding.writingBackIv.setOnClickListener {
+            finish()
+        }
     }
 }
