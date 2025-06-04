@@ -31,6 +31,15 @@
     <!--RecyclerView-->
 
     <ImageView
+        android:id="@+id/writing_accessories_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_accessory"
+        app:layout_constraintStart_toStartOf="@id/writing_bag_iv"
+        app:layout_constraintTop_toTopOf="@id/writing_cap_iv"/>
+
+
+    <ImageView
         android:id="@+id/writing_tshirt_iv"
         android:layout_width="90dp"
         android:layout_height="90dp"
