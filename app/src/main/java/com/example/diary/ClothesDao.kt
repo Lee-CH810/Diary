@@ -20,12 +20,12 @@ interface ClothesDao {
     /**
      * 단일 조회
      */
-    @Query("SELECT id, name, color FROM ClothesTable WHERE id = :id")
+    @Query("SELECT id, name, color, type FROM ClothesTable WHERE id = :id")
     fun getClothe(id: Int): Clothes
 
     /**
      * 테이블 전체 조회
      */
-    @Query("SELECT id, name, color FROM ClothesTable")
+    @Query("SELECT id, name, color, type FROM ClothesTable")
     fun getClothes(): List<Clothes>
 }

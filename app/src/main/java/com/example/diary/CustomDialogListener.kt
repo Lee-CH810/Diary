@@ -1,5 +1,5 @@
 package com.example.diary
 
 interface CustomDialogListener {
-    fun onClickOkButton(clothes: String)
+    fun onClickOkButton(name: String, color: String, type: String)
 }

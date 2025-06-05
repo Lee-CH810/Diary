@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import androidx.databinding.DataBindingUtil
 import com.example.diary.databinding.CustomDialogBinding
 
-class CustomDialog(context: Context, private val listener: CustomDialogListener): Dialog(context) {
+class CustomDialog(context: Context, private val listener: CustomDialogListener, private val type: String): Dialog(context) {
 
     private lateinit var binding: CustomDialogBinding
 
@@ -27,8 +27,10 @@ class CustomDialog(context: Context, private val listener: CustomDialogListener)
 
             // 제출 버튼
             dialogInputButton.setOnClickListener{
-                val clothesName = dialogInputEt.text.toString()
-                listener.onClickOkButton(clothesName)
+                val clothesName = dialogInputClothesNameEt.text.toString()
+                val clothesColor = dialogInputColorEt.text.toString()
+
+                listener.onClickOkButton(clothesName, clothesColor, type)
 
                 dismiss() // 다이얼로그 종료
             }

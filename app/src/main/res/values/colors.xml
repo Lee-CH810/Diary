@@ -6,4 +6,6 @@
     <color name="holidays">#DF6464</color>
     <color name="weekdays">#FF000000</color>
     <color name="saturday">#325C9B</color>
+
+    <color name="isSubmitted">#FFA45B</color>
 </resources>
