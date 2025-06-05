@@ -29,6 +29,7 @@ class CustomDialog(context: Context, private val listener: CustomDialogListener)
             dialogInputButton.setOnClickListener{
                 val clothesName = dialogInputEt.text.toString()
                 listener.onClickOkButton(clothesName)
+
                 dismiss() // 다이얼로그 종료
             }
         }
