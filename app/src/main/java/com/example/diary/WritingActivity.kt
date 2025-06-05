@@ -2,6 +2,10 @@ package com.example.diary
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.Space
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.diary.databinding.ActivityWritingBinding
@@ -17,48 +21,34 @@ class WritingActivity : AppCompatActivity(), CustomDialogListener {
         setContentView(binding.root)
         Log.d("FLOW:WritingAct", "setContentView")
 
-        binding.writingBackIv.setOnClickListener {
-            finish()
-        }
-
-        initOnClickClothes()
+        initGridLayout()
 
     }
 
-    private fun initOnClickClothes() {
-        // 모자 클릭
-        binding.writingCapIv.setOnClickListener {
-            customDialog()
-        }
+    private fun initGridLayout() {
+        val items = listOf(
+            null,
+            Pair("모자", R.drawable.ic_cap),
+            Pair("악세서리", R.drawable.ic_accessory)
+        )
 
-        // 악세서리 클릭
-        binding.writingAccessoriesIv.setOnClickListener {
-            customDialog()
-        }
-
-        // 겉옷 클릭
-        binding.writingOuterwearIv.setOnClickListener {
-            customDialog()
-        }
-
-        // 상의 클릭
-        binding.writingTshirtIv.setOnClickListener {
-            customDialog()
-        }
-
-        // 가방 클릭
-        binding.writingBagIv.setOnClickListener {
-            customDialog()
-        }
-
-        // 하의 클릭
-        binding.writingPantsIv.setOnClickListener {
-            customDialog()
-        }
-
-        // 신발 클릭
-        binding.writingShoesIv.setOnClickListener {
-            customDialog()
+        items.forEachIndexed{ index, item ->
+            val view = if (item != null) {
+                val button = ImageButton(this).apply {
+                    setImageResource(item.second)
+                    contentDescription = item.first
+                    id = View.generateViewId()
+                    setOnClickListener {
+                        Toast.makeText(context, "${item.first} 클릭됨", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                button
+                Log.d("FLOW", "View Generated")
+            } else {
+                Space(this)
+                Log.d("FLOW", "empty")
+            }
+            binding.menuGrid.addView(view)
         }
     }
 
